@@ -1,10 +1,12 @@
 public class AnagramCheck {
-    private final static String[] PUNCTUATION_MARKS = new String[]{".","!","?",",",";",":"};
-    public static boolean isAnagram(String word, String anagram, boolean caseSensitive, boolean punctuationMarkSensitve) {
-        if (!punctuationMarkSensitve) {
-            for (int i=0; i<PUNCTUATION_MARKS.length; i++) {
-                word = word.replace(PUNCTUATION_MARKS[i], "");
-                anagram = anagram.replace(PUNCTUATION_MARKS[i], "");
+
+    private final static String[] SPACE_PUNCTUATION_MARKS = new String[]{" ",".","!","?",",",";",":"};
+
+    public static boolean isAnagram(String word, String anagram, boolean caseSensitive, boolean spacePunctuationMarkSensitive) {
+        if (!spacePunctuationMarkSensitive) {
+            for (int i=0; i<SPACE_PUNCTUATION_MARKS.length; i++) {
+                word = word.replace(SPACE_PUNCTUATION_MARKS[i], "");
+                anagram = anagram.replace(SPACE_PUNCTUATION_MARKS[i], "");
             }
         }
         if (word.length() != anagram.length()) {
@@ -23,7 +25,7 @@ public class AnagramCheck {
                 return false;
             }
         }
-        return anagram.isEmpty();
+        return true;
     }
 }
 
