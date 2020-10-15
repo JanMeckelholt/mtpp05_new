@@ -46,7 +46,7 @@ public class Tennis{
         return player1.getScore() + "-" + player2.getScore();
     }
 
-    private Player getLeader(Player player1, Player player2){
+    public Player getLeader(Player player1, Player player2){
         if (player1.getPoints() > player2.getPoints())
             return player1;
         if (player2.getPoints() > player1.getPoints())
